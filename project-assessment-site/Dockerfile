@@ -1,15 +1,9 @@
-FROM node
+FROM node:lts-alpine3.10
 
-# Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
-COPY package*.json ./
+COPY . .
+
 
 RUN npm install
 
-# bundle app source
-COPY . .
-
-EXPOSE 80
 
 CMD ["node","index.js"]
