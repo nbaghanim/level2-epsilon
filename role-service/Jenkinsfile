@@ -15,7 +15,7 @@ spec:
     command: 
     - cat
     tty: true
-    volumeMounts:
+    volumeMounts: 
     - mountPath: /var/run/docker.sock
       name: docker-sock
   - name: kubectl
@@ -30,12 +30,12 @@ spec:
       type: Socket
 """
     }
-  }  
-environment {
-    CREDS = credentials('raghadq-docker-cred')
-    DOCKER_NAMESPACE = 'raghadq'
+  }
+  environment {
+    CREDS = credentials('epsilon_docker_creds')
+    DOCKER_NAMESPACE = 'amerahsultan1'
     SERVICE_NAME = 'role-service'
-    TOKEN=credentials('064a7fc8-da77-4e3b-87b5-607c0561bb5c')
+    TOKEN=credentials('47fa30fd-cde9-4ca3-b210-972fc7be45ce')
   }
   stages {
       stage("Build") {
@@ -63,7 +63,9 @@ environment {
               container('kubectl') {
                   sh '''
                       cd $SERVICE_NAME
-                      kubectl --token=$TOKEN -n test apply -f deploy.yaml -f service.yaml
+                      kubectl --token=$TOKEN -n epsilon get all
+                      kubectl --token=$TOKEN -n epsilon apply -f deploy.yaml -f service.yaml
+                      kubectl --token=$TOKEN -n epsilon get all
                   '''
               }
           }
