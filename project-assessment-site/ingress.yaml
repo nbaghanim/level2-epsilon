@@ -2,7 +2,7 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: site-ingress
-  namespace: test
+  namespace: epsilon
   annotations:
     ingress.kubernetes.io/ssl-redirect: "false"
 spec:
