@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: project-assessment-site
+  namespace: epsilon
   labels:
     app: project-assessment-site
     type: api
@@ -17,6 +18,6 @@ spec:
     spec:
       containers:
       - name: project-assessment-site
-        image: raghadq/project-assessment-site:v1
+        image: amerahsultan1/project-assessment-site
         ports:
         - containerPort: 80
