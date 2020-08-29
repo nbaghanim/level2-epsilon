@@ -1,24 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: department-service
+  name: project-assessment-site
   namespace: test
   labels:
-    app: department-service
+    app: project-assessment-site
     type: api
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: department-service
+      app: project-assessment-site
   template:
     metadata:
       labels:
-        app: department-service
+        app: project-assessment-site
     spec:
       containers:
-      - name: department-service
-        image: amerahsultan1/department-service
+      - name: project-assessment-site
+        image: amerahsultan1/project-assessment-site
         ports:
         - containerPort: 80
-
