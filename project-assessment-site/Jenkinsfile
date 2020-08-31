@@ -35,7 +35,7 @@ spec:
     CREDS = credentials('epsilon_docker_creds')
     DOCKER_NAMESPACE = 'amerahsultan1'
     SERVICE_NAME = 'project-assessment-site'
-    TOKEN=credentials('8b823570-bcbc-462f-a1e9-8d45731db45c')
+    TOKEN=credentials('bc33a7c7-818f-47d0-9140-94822190010c')
   }
   stages {
       stage("Build") {
